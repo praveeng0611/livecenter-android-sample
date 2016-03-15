@@ -1,11 +1,12 @@
-# livecenter-android-sample
+## Introduction
+
+This is a sample to understand how to use the Livecenter SDK for Android. The code and examples mentioned here are just for test purpose. In case you have any trouble using or understanding this, please reach out to whoop@thoughtchimp.com
 
 ## Requirement
-Livecenter SDK system works on Android 4.1 or above (SDK's min Android SDK version is 16).
+Android 4.1 or above (SDK's min Android SDK version is 16).
 
-
-## Download
-Define via Gradle:
+## Installation
+#### Define via Gradle:
 ```groovy
 
 repositories {
@@ -20,7 +21,7 @@ dependencies {
 ```
 ## Usage
 
-### Integrate With Your Application
+#### Integrate With Your Application
 ```java
 package com.example.app;
 
@@ -39,8 +40,8 @@ public class LiveCenterApp extends Application {
         }
 }
 ```
-### Api Endpoint usages
-##### Load Match list
+#### Api Endpoint usages
+Load Match list
 ```java
 LivecenterService service = (new LivecenterApi()).getLiveCenterService();
 service.getAllMatches(new Callback<List<Match>>() {
@@ -55,7 +56,7 @@ service.getAllMatches(new Callback<List<Match>>() {
     }
 });
 ```
-##### Load Match detail and Teams using match id
+Load Match detail and Teams using match id
 ```java
 LivecenterService service = (new LivecenterApi()).getLiveCenterService();
 service.getMatchData("match_id", new Callback<MatchData>() {
@@ -70,7 +71,7 @@ service.getMatchData("match_id", new Callback<MatchData>() {
     }
 });
 ```
-##### Load Goal list of match using match id
+Load Goal list of match using match id
 ```java
 LivecenterService service = (new LivecenterApi()).getLiveCenterService();
 service.getMatchGoals("match_id", new Callback<List<Goal>>() {
@@ -85,7 +86,7 @@ service.getMatchGoals("match_id", new Callback<List<Goal>>() {
     }
 });
 ```
-##### Load Ticker list of match using match id
+Load Ticker list of match using match id
 ```java
 LivecenterService service = (new LivecenterApi()).getLiveCenterService();
 service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>>() {
@@ -100,9 +101,9 @@ service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>
     }
 });
 ```
-### Display Liveblog and Social feed View - LivecenterView 
+#### Display Liveblog and Social feed View - LivecenterView 
 
-##### By adding LivecenterView in layout.xml file
+By adding LivecenterView in layout.xml file
 
 ```xml
     <com.livecenter.ui.LivecenterView
@@ -114,24 +115,25 @@ service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>
 ```java
 LivecenterView livecenterView = (LivecenterView) findViewById(R.id.livecenterView);
 ```
-**OR**
-#####By Creating object of LivecenterView
+**or**
+
+By Creating object of LivecenterView
 ```java
 LivecenterView livecenterView = new LivecenterView(context);
 FrameLayout frameLayout = (FrameLayout) findViewById(R.id.container);
 frameLayout.addView(new LivecenterView(this));
 ```
 
-#### Loading feed in LivecenterView
+Loading feed in LivecenterView
 ```java
 livecenterView.loadLiveCenter("match_id", LivecenterType.LiveBlog, feed_frequency);
 ```
-#### Load new feed in LivecenterView
+Load new feed in LivecenterView
 ```java
 livecenterView.loadNewFeed();
 ```
 
-#### Getting Callback methods from LivecenterView 
+Getting Callback methods from LivecenterView 
 ```java
 livecenterView.setLivecenterViewListener(new LivecenterViewListener() {
             @Override
