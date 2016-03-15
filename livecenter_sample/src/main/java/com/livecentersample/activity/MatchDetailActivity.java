@@ -1,4 +1,4 @@
-package com.livecentersample;
+package com.livecentersample.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,7 +19,11 @@ import com.livecenter.core.model.MatchData;
 import com.livecenter.core.util.Callback;
 import com.livecenter.core.util.LivecenterException;
 import com.livecenter.core.util.Result;
+import com.livecentersample.LiveCenterApp;
+import com.livecentersample.R;
+import com.livecentersample.adapter.TeamAdapter;
 import com.livecentersample.util.ColorUtil;
+import com.livecentersample.util.Constant;
 
 import ca.barrenechea.widget.recyclerview.decoration.DividerDecoration;
 import ca.barrenechea.widget.recyclerview.decoration.StickyHeaderDecoration;
@@ -83,7 +87,7 @@ public class MatchDetailActivity extends AppCompatActivity {
         showPlayerList();
     }
 
-    private void showPlayerList() {
+    public void showPlayerList() {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         final DividerDecoration divider = new DividerDecoration.Builder(this)
                 .setHeight(R.dimen.default_divider_height)

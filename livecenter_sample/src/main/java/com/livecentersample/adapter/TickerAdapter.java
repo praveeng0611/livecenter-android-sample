@@ -1,4 +1,4 @@
-package com.livecentersample;
+package com.livecentersample.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.livecenter.core.model.MatchTicker;
+import com.livecentersample.R;
+import com.livecentersample.activity.TickerActivity;
 
 import java.util.List;
 

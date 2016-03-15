@@ -1,4 +1,4 @@
-package com.livecentersample;
+package com.livecentersample.util;
 
 /**
  * Created by King on 14/03/16.

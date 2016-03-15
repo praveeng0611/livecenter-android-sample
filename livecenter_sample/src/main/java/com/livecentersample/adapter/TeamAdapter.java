@@ -1,4 +1,4 @@
-package com.livecentersample;
+package com.livecentersample.adapter;
 
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.livecenter.core.model.MatchData;
 import com.livecenter.core.model.Player;
+import com.livecentersample.R;
+import com.livecentersample.activity.MatchDetailActivity;
 import com.livecentersample.util.ColorUtil;
 
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ import ca.barrenechea.widget.recyclerview.decoration.StickyHeaderAdapter;
 /**
  * Created by King on 14/03/16.
  */
-class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> implements StickyHeaderAdapter<TeamAdapter.HeaderHolder> {
+public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> implements StickyHeaderAdapter<TeamAdapter.HeaderHolder> {
 
     private final MatchData matchData;
     private final LayoutInflater mInflater;

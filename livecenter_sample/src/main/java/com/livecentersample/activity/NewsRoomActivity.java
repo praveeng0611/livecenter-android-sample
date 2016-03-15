@@ -1,4 +1,4 @@
-package com.livecentersample;
+package com.livecentersample.activity;
 
 import android.app.ProgressDialog;
 import android.os.Build;
@@ -12,6 +12,8 @@ import com.livecenter.core.model.Match;
 import com.livecenter.ui.LivecenterType;
 import com.livecenter.ui.LivecenterView;
 import com.livecenter.ui.LivecenterViewListener;
+import com.livecentersample.LiveCenterApp;
+import com.livecentersample.R;
 
 public class NewsRoomActivity extends AppCompatActivity
         implements LivecenterViewListener, SwipeRefreshLayout.OnRefreshListener {

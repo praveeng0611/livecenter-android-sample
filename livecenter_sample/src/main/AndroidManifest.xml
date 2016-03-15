@@ -11,20 +11,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MatchDetailActivity">
+        <activity android:name=".activity.MatchDetailActivity">
         </activity>
-        <activity android:name=".NewsRoomActivity">
+        <activity android:name=".activity.NewsRoomActivity">
         </activity>
-        <activity android:name=".GoalActivity">
+        <activity android:name=".activity.GoalActivity">
         </activity>
-        <activity android:name=".TickerActivity">
+        <activity android:name=".activity.TickerActivity">
         </activity>
     </application>
 

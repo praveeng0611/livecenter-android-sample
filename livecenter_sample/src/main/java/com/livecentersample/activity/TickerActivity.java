@@ -1,4 +1,4 @@
-package com.livecentersample;
+package com.livecentersample.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,33 +7,36 @@ import android.support.v7.widget.RecyclerView;
 
 import com.livecenter.core.api.LivecenterApi;
 import com.livecenter.core.api.LivecenterService;
-import com.livecenter.core.model.Goal;
 import com.livecenter.core.model.Match;
+import com.livecenter.core.model.MatchTicker;
 import com.livecenter.core.util.Callback;
 import com.livecenter.core.util.LivecenterException;
 import com.livecenter.core.util.Result;
+import com.livecentersample.LiveCenterApp;
+import com.livecentersample.R;
+import com.livecentersample.adapter.TickerAdapter;
 
 import java.util.List;
 
-public class GoalActivity extends AppCompatActivity {
+public class TickerActivity extends AppCompatActivity {
 
     private Match currentMatch;
-    private GoalAdapter adapter;
+    private TickerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_goal);
-        loadGoals();
+        setContentView(R.layout.activity_ticker);
+        loadtickers();
     }
 
-    private void loadGoals() {
+    private void loadtickers() {
         currentMatch = LiveCenterApp.getInstance().getCurrentMatch();
         LivecenterService service = (new LivecenterApi()).getLiveCenterService();
-        service.getMatchGoals("" + currentMatch.getId(), new Callback<List<Goal>>() {
+        service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>>() {
             @Override
-            public void success(Result<List<Goal>> result) {
-                initGoalUi(result.data);
+            public void success(Result<List<MatchTicker>> result) {
+                initTickerUi(result.data);
             }
 
             @Override
@@ -43,12 +46,12 @@ public class GoalActivity extends AppCompatActivity {
         });
     }
 
-    private void initGoalUi(List<Goal> data) {
+    private void initTickerUi(List<MatchTicker> data) {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new GoalAdapter(data, this);
+        adapter = new TickerAdapter(data, this);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }

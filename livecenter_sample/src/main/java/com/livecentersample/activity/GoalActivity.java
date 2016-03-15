@@ -1,64 +1,58 @@
-package com.livecentersample;
+package com.livecentersample.activity;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.livecenter.core.api.LivecenterApi;
 import com.livecenter.core.api.LivecenterService;
+import com.livecenter.core.model.Goal;
 import com.livecenter.core.model.Match;
 import com.livecenter.core.util.Callback;
 import com.livecenter.core.util.LivecenterException;
 import com.livecenter.core.util.Result;
+import com.livecentersample.LiveCenterApp;
+import com.livecentersample.R;
+import com.livecentersample.adapter.GoalAdapter;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MatchListAdapter.OnMatchSelected {
+public class GoalActivity extends AppCompatActivity {
 
-    List<Match> matchList;
-    private MatchListAdapter adapter;
+    private Match currentMatch;
+    private GoalAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        loadMatchList();
+        setContentView(R.layout.activity_goal);
+        loadGoals();
     }
 
-    private void loadMatchList() {
+    private void loadGoals() {
+        currentMatch = LiveCenterApp.getInstance().getCurrentMatch();
         LivecenterService service = (new LivecenterApi()).getLiveCenterService();
-        service.getAllMatches(new Callback<List<Match>>() {
+        service.getMatchGoals("" + currentMatch.getId(), new Callback<List<Goal>>() {
             @Override
-            public void success(Result<List<Match>> result) {
-                matchList = result.data;
-                initMatchListUi();
+            public void success(Result<List<Goal>> result) {
+                initGoalUi(result.data);
             }
 
             @Override
             public void failure(LivecenterException error, int code) {
-                Log.i(Constant.APP_TAG,error.getMessage());
+
             }
         });
     }
 
-    private void initMatchListUi() {
+    private void initGoalUi(List<Goal> data) {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new MatchListAdapter(matchList, this);
-        adapter.setOnMatchSelected(this);
+        adapter = new GoalAdapter(data, this);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public void onMatchSelected(Match match) {
-        LiveCenterApp.getInstance().setCurrentMatch(match);
-        startActivity(new Intent(this,MatchDetailActivity.class));
     }
 }
