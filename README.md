@@ -40,15 +40,31 @@ public class LiveCenterApp extends Application {
 - Load Match list
 ```java
 LivecenterService service = (new LivecenterApi()).getLiveCenterService();
-        service.getAllMatches(new Callback<List<Match>>() {
-            @Override
-            public void success(Result<List<Match>> result) {
-                matchList = result.data;
-            }
+service.getAllMatches(new Callback<List<Match>>() {
+    @Override
+    public void success(Result<List<Match>> result) {
+        matchList = result.data;
+    }
 
-            @Override
-            public void failure(LivecenterException error, int code) {
-                Log.i(Constant.APP_TAG,error.getMessage());
-            }
-        });
+    @Override
+    public void failure(LivecenterException error, int code) {
+        Log.i(Constant.APP_TAG,error.getMessage());
+    }
+});
+```
+- Load Match detail and Teams using match id
+```java
+LivecenterService service = (new LivecenterApi()).getLiveCenterService();
+service.getMatchData("match_id", new Callback<MatchData>() {
+    @Override
+    public void success(Result<MatchData> result) {
+        matchData = result.data;
+        initUi();
+    }
+
+    @Override
+    public void failure(LivecenterException error, int code) {
+        Log.i(Constant.APP_TAG,error.getMessage());
+    }
+});
 ```
