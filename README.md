@@ -112,4 +112,6 @@ service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>
 LivecenterView livecenterView = (LivecenterView) findViewById(R.id.livecenterView);
 ```
 
-->OR<-
+|| <!-- empty table header -->
+|:--:| <!-- table header/body separator with center formatting -->
+| I'm centered! | <!-- cell gets column's alignment -->
