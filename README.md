@@ -14,7 +14,7 @@ repositories {
 dependencies {
     compile 'com.chimps:livecenter:0.0.8'
 }
-
+```
 ## Usage
 
 ### Integrate With Your Application
@@ -28,11 +28,5 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Example: single kit
-        // TwitterAuthConfig authConfig =  new TwitterAuthConfig("consumerKey", "consumerSecret");
-        // Fabric.with(this, new TwitterCore(authConfig));
-
-        // Example: multiple kits
-        // Fabric.with(this, new TwitterCore(authConfig), new TweetUi());
     }
 }
