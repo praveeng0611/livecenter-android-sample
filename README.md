@@ -28,8 +28,10 @@ public class LiveCenterApp extends Application {
         public void onCreate(){
             super.onCreate();
             instance = this;
+            //initialize sdk using consumer key and consumer secret
             Livecenter.initialize(this,"your_consumer_key",
                     "your_consumer_secret");
+            // define tag to get log
             Livecenter.setLogTag(Constant.APP_TAG);
         }
 }
