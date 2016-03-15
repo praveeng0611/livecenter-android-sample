@@ -28,6 +28,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> im
     List<Player> playerList;
     int teamOneOnFieldPlayerCount;
 
+
     public TeamAdapter(MatchDetailActivity matchDetailActivity, MatchData matchData) {
         this.matchData= matchData;
         mInflater = LayoutInflater.from(matchDetailActivity);
