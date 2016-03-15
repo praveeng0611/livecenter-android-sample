@@ -97,7 +97,7 @@ service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>
     }
 });
 ```
-# Display Liveblog and Social feed View
+### Display Liveblog and Social feed View
 
 -By adding LivecenterView in layout.xml file
 ```xml
