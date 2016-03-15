@@ -97,7 +97,7 @@ service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>
     }
 });
 ```
-### Display Liveblog and Social feed View
+### Display Liveblog and Social feed View - LivecenterView 
 
 ##### By adding LivecenterView in layout.xml file
 
@@ -119,16 +119,16 @@ FrameLayout frameLayout = (FrameLayout) findViewById(R.id.container);
 frameLayout.addView(new LivecenterView(this));
 ```
 
-##### Loading feed in LivecenterView
+#### Loading feed in LivecenterView
 ```java
 livecenterView.loadLiveCenter("match_id", LivecenterType.LiveBlog, feed_frequency);
 ```
-##### Load new feed in LivecenterView
+#### Load new feed in LivecenterView
 ```java
 livecenterView.loadNewFeed();
 ```
 
-##### Getting Callback methods from LivecenterView 
+#### Getting Callback methods from LivecenterView 
 ```java
 livecenterView.setLivecenterViewListener(new LivecenterViewListener() {
             @Override
