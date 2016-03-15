@@ -99,7 +99,7 @@ service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>
 ```
 ### Display Liveblog and Social feed View
 
--By adding LivecenterView in layout.xml file
+##### By adding LivecenterView in layout.xml file
 
 ```xml
     <com.livecenter.ui.LivecenterView
@@ -112,3 +112,48 @@ service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>
 LivecenterView livecenterView = (LivecenterView) findViewById(R.id.livecenterView);
 ```
 **OR**
+#####By Creating object of LivecenterView
+```java
+LivecenterView livecenterView = new LivecenterView(context);
+FrameLayout frameLayout = (FrameLayout) findViewById(R.id.container);
+frameLayout.addView(new LivecenterView(this));
+```
+
+##### Loading feed in LivecenterView
+```java
+livecenterView.loadLiveCenter("match_id", LivecenterType.LiveBlog, feed_frequency);
+```
+##### Load new feed in LivecenterView
+```java
+livecenterView.loadNewFeed();
+```
+
+##### Getting Callback methods from LivecenterView 
+```java
+livecenterView.setLivecenterViewListener(new LivecenterViewListener() {
+            @Override
+            public void onLiveCenterViewLoadingStart() {
+                // TODO on feed loading started
+            }
+
+            @Override
+            public void onLiveCenterViewEmptyPage() {
+                // TODO on no feed available
+            }
+
+            @Override
+            public void onLiveCenterViewLoadingFinished() {
+                // TODO on feed loading finished
+            }
+
+            @Override
+            public void onLiveCenterRefreshed() {
+                // TODO on feed data refreshed
+            }
+
+            @Override
+            public void onLiveCenterViewLoadingError(int errorCode, String message) {
+                // TODO on feed loading failed
+            }
+        });
+```
