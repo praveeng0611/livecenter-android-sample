@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:id="@+id/main_view"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp" android:paddingLeft="15dp">
+        <TextView
+            android:id="@+id/textView_matchTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Match Title"
+            android:textSize="16sp"
+            android:textColor="@color/blackColor"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/liveStatus"
+            android:layout_toStartOf="@+id/liveStatus"/>
+
+        <TextView
+            android:id="@+id/liveStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:text="Live"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/whiteColor"
+            android:background="@color/greenColor"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/textView_matchDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blackColor"
+        android:textSize="12sp"
+        android:paddingLeft="15dp" android:paddingRight="15dp"
+        android:paddingBottom="10dp"
+        android:text="date and time"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/lightGrey"/>
+
+</LinearLayout>

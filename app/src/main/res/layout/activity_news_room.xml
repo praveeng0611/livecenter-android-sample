@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.livecentersample.NewsRoomActivity">
+    <RadioGroup
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/whiteColor"
+        android:id="@+id/radioGroup_liveSocial">
+
+        <RadioButton
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Live Blog"
+            android:button="@null"
+            android:onClick="onClick"
+            android:checked="true"
+            android:background="@drawable/img_radio_button"
+            android:gravity="center"
+            android:id="@+id/radio_live" />
+        <View
+            android:layout_width="0.5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/lightGrey"/>
+
+        <RadioButton
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/img_radio_button"
+            android:text="Social"
+            android:onClick="onClick"
+            android:button="@null"
+            android:gravity="center"
+            android:id="@+id/radio_social"/>
+    </RadioGroup>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.livecenter.ui.LivecenterView
+        android:id="@+id/livecenterView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>
