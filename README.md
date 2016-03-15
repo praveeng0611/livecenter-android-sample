@@ -88,12 +88,12 @@ LivecenterService service = (new LivecenterApi()).getLiveCenterService();
 service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>>() {
     @Override
     public void success(Result<List<MatchTicker>> result) {
-        initTickerUi(result.data);
+        List<MatchTicker> matchTickerList = result.data;
     }
 
     @Override
     public void failure(LivecenterException error, int code) {
-
+        Log.i(Constant.APP_TAG,error.getMessage());
     }
 });
 ```
