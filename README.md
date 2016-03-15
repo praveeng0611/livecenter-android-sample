@@ -23,11 +23,14 @@ package com.example.app;
 
 import android.app.Application;
 
-public class MyApplication extends Application {
+public class LiveCenterApp extends Application {
     @Override
-    public void onCreate() {
-        super.onCreate();
-
-    }
+        public void onCreate(){
+            super.onCreate();
+            instance = this;
+            Livecenter.initialize(this,"your_consumer_key",
+                    "your_consumer_secret");
+            Livecenter.setLogTag(Constant.APP_TAG);
+        }
 }
 ```
