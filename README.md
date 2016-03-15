@@ -43,7 +43,7 @@ LivecenterService service = (new LivecenterApi()).getLiveCenterService();
 service.getAllMatches(new Callback<List<Match>>() {
     @Override
     public void success(Result<List<Match>> result) {
-        matchList = result.data;
+        List<Match> matchList = result.data;
     }
 
     @Override
@@ -58,13 +58,42 @@ LivecenterService service = (new LivecenterApi()).getLiveCenterService();
 service.getMatchData("match_id", new Callback<MatchData>() {
     @Override
     public void success(Result<MatchData> result) {
-        matchData = result.data;
-        initUi();
+        MatchData matchData = result.data;
     }
 
     @Override
     public void failure(LivecenterException error, int code) {
         Log.i(Constant.APP_TAG,error.getMessage());
+    }
+});
+```
+- Load Goal list of match using match id
+```java
+LivecenterService service = (new LivecenterApi()).getLiveCenterService();
+service.getMatchGoals("match_id", new Callback<List<Goal>>() {
+    @Override
+    public void success(Result<List<Goal>> result) {
+        List<Goal> goalList = result.data;
+    }
+
+    @Override
+    public void failure(LivecenterException error, int code) {
+        Log.i(Constant.APP_TAG,error.getMessage());
+    }
+});
+```
+- Load Ticker list of match using match id
+```java
+LivecenterService service = (new LivecenterApi()).getLiveCenterService();
+service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>>() {
+    @Override
+    public void success(Result<List<MatchTicker>> result) {
+        initTickerUi(result.data);
+    }
+
+    @Override
+    public void failure(LivecenterException error, int code) {
+
     }
 });
 ```
