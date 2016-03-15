@@ -18,6 +18,13 @@ import com.livecentersample.adapter.TickerAdapter;
 
 import java.util.List;
 
+/**
+ *o - - - + - - - - o - + - - - - + - - - o
+ *~ - - ~   Developed with love   ~ - - ~       /\_/\
+ *~ - -  T H O U G H T   C H I M P ~ - -       ( ^.^ )
+ *~ - - ~  www.thoughtchimp.com  ~ - - ~          ˜
+ *o - - - + - - - - o - + - - - - + - - - o
+ */
 public class TickerActivity extends AppCompatActivity {
 
     private Match currentMatch;

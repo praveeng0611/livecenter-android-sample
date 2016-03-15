@@ -20,6 +20,13 @@ import com.livecentersample.util.Constant;
 
 import java.util.List;
 
+/**
+ *o - - - + - - - - o - + - - - - + - - - o
+ *~ - - ~   Developed with love   ~ - - ~       /\_/\
+ *~ - -  T H O U G H T   C H I M P ~ - -       ( ^.^ )
+ *~ - - ~  www.thoughtchimp.com  ~ - - ~          ˜
+ *o - - - + - - - - o - + - - - - + - - - o
+ */
 public class MainActivity extends AppCompatActivity implements MatchListAdapter.OnMatchSelected {
 
     List<Match> matchList;

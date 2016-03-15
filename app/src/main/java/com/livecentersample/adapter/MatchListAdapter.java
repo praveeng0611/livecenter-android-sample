@@ -13,7 +13,11 @@ import com.livecentersample.R;
 import java.util.List;
 
 /**
- * Created by King on 14/03/16.
+ *o - - - + - - - - o - + - - - - + - - - o
+ *~ - - ~   Developed with love   ~ - - ~       /\_/\
+ *~ - -  T H O U G H T   C H I M P ~ - -       ( ^.^ )
+ *~ - - ~  www.thoughtchimp.com  ~ - - ~          ˜
+ *o - - - + - - - - o - + - - - - + - - - o
  */
 public class MatchListAdapter extends RecyclerView.Adapter implements View.OnClickListener {
 

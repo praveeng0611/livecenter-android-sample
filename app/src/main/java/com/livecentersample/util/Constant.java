@@ -1,7 +1,11 @@
 package com.livecentersample.util;
 
 /**
- * Created by King on 14/03/16.
+ *o - - - + - - - - o - + - - - - + - - - o
+ *~ - - ~   Developed with love   ~ - - ~       /\_/\
+ *~ - -  T H O U G H T   C H I M P ~ - -       ( ^.^ )
+ *~ - - ~  www.thoughtchimp.com  ~ - - ~          ˜
+ *o - - - + - - - - o - + - - - - + - - - o
  */
 public class Constant {
 

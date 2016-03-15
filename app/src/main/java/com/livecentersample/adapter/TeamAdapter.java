@@ -19,7 +19,11 @@ import java.util.List;
 import ca.barrenechea.widget.recyclerview.decoration.StickyHeaderAdapter;
 
 /**
- * Created by King on 14/03/16.
+ *o - - - + - - - - o - + - - - - + - - - o
+ *~ - - ~   Developed with love   ~ - - ~       /\_/\
+ *~ - -  T H O U G H T   C H I M P ~ - -       ( ^.^ )
+ *~ - - ~  www.thoughtchimp.com  ~ - - ~          ˜
+ *o - - - + - - - - o - + - - - - + - - - o
  */
 public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> implements StickyHeaderAdapter<TeamAdapter.HeaderHolder> {
 

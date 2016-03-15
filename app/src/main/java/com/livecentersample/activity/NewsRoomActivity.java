@@ -1,14 +1,10 @@
 package com.livecentersample.activity;
 
 import android.app.ProgressDialog;
-import android.os.Build;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import com.livecenter.core.model.Match;
 import com.livecenter.ui.LivecenterType;

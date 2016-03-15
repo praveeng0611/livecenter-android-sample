@@ -7,7 +7,11 @@ import com.livecenter.core.model.Match;
 import com.livecentersample.util.Constant;
 
 /**
- * Created by King on 12/03/16.
+ *o - - - + - - - - o - + - - - - + - - - o
+ *~ - - ~   Developed with love   ~ - - ~       /\_/\
+ *~ - -  T H O U G H T   C H I M P ~ - -       ( ^.^ )
+ *~ - - ~  www.thoughtchimp.com  ~ - - ~          ˜
+ *o - - - + - - - - o - + - - - - + - - - o
  */
 public class LiveCenterApp extends Application{
 
