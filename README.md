@@ -111,4 +111,4 @@ service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>
 ```java
 LivecenterView livecenterView = (LivecenterView) findViewById(R.id.livecenterView);
 ```
-<center>Or</center>
+**OR**
