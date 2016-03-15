@@ -1,7 +1,7 @@
 # livecenter-android-sample
 
 ## Requirement
-The SDK system works on Android 4.1 or above (SDK's min Android SDK version is 16).
+Livecenter SDK system works on Android 4.1 or above (SDK's min Android SDK version is 16).
 
 
 ## Download
