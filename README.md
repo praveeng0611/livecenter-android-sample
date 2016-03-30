@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.chimps:livecenter:0.0.8'
+    compile 'com.chimps:livecenter:0.0.9'
 }
 ```
 ## Usage
