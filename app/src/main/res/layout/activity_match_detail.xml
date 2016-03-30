@@ -95,6 +95,14 @@
             android:layout_toEndOf="@+id/view_middle"
             android:text="0"/>
     </RelativeLayout>
+    <TextView
+        android:id="@+id/textView_match_referee"
+        android:layout_marginLeft="20dp" android:layout_marginStart="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blackColor"
+        android:textSize="14sp"
+        android:text="Referee:"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

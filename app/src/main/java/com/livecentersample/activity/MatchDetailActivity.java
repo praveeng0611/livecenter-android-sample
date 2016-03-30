@@ -65,6 +65,9 @@ public class MatchDetailActivity extends AppCompatActivity {
     private void initUi() {
         ((TextView) findViewById(R.id.textView_team1_name)).setText(matchData.getTeamOne().getName());
         ((TextView) findViewById(R.id.textView_team2_name)).setText(matchData.getTeamTwo().getName());
+
+        ((TextView) findViewById(R.id.textView_match_referee))
+                .setText("Referee: "+matchData.getMatchReferee());
         Glide.with(this)
                 .load(matchData.getTeamOne().getLogo())
                 .placeholder(R.color.lightGrey)
