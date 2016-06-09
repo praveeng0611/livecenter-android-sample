@@ -41,7 +41,7 @@ public class LiveCenterApp extends Application {
 }
 ```
 #### Api Endpoint usages
-Load Match list
+Step 1: Load Match list
 ```java
 LivecenterService service = (new LivecenterApi()).getLiveCenterService();
 service.getAllMatches(new Callback<List<Match>>() {
@@ -56,7 +56,7 @@ service.getAllMatches(new Callback<List<Match>>() {
     }
 });
 ```
-Load Match detail and Teams using match id
+Step 2: Load Match detail and Teams using match id
 ```java
 LivecenterService service = (new LivecenterApi()).getLiveCenterService();
 service.getMatchData("match_id", new Callback<MatchData>() {
@@ -71,7 +71,7 @@ service.getMatchData("match_id", new Callback<MatchData>() {
     }
 });
 ```
-Load Goal list of match using match id
+Step 3: Load Goal list of match using match id
 ```java
 LivecenterService service = (new LivecenterApi()).getLiveCenterService();
 service.getMatchGoals("match_id", new Callback<List<Goal>>() {
@@ -86,7 +86,7 @@ service.getMatchGoals("match_id", new Callback<List<Goal>>() {
     }
 });
 ```
-Load Ticker list of match using match id
+Step 4: Load Ticker list of match using match id
 ```java
 LivecenterService service = (new LivecenterApi()).getLiveCenterService();
 service.getMatchTicker("" + currentMatch.getId(), new Callback<List<MatchTicker>>() {
